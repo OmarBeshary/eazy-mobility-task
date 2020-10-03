@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.MainActivity">
+    android:background="@color/alabaster"
+    tools:context=".features.TripsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
-        tools:context=".features.MainActivity">
+        tools:context=".features.TripsActivity">
 
         <TextView
             android:id="@+id/pickup_tv"

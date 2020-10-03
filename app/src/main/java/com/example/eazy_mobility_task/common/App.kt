@@ -1,10 +1,7 @@
 package com.example.eazy_mobility_task.common
 
 import android.app.Application
-import com.example.eazy_mobility_task.common.koin.repoModules
-import com.example.eazy_mobility_task.common.koin.restAPIsModules
-import com.example.eazy_mobility_task.common.koin.restClientModule
-import com.example.eazy_mobility_task.common.koin.viewModelModules
+import com.example.eazy_mobility_task.common.koin.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
@@ -24,6 +21,7 @@ class App : Application() {
 
     private fun getKoinModules(): List<Module> = listOf(
         viewModelModules, restClientModule,
-        restAPIsModules, repoModules
+        restAPIsModules, repoModules,
+        schedulerModule
     )
 }
