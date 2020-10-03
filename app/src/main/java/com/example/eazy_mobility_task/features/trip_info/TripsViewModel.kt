@@ -7,17 +7,6 @@ import com.example.eazy_mobility_task.common.component.view_model.BaseViewModel
 import com.example.eazy_mobility_task.common.model.response.TripInfoResponse
 import com.example.eazy_mobility_task.common.repo.TripsRepo
 
-/**
- * add offline support [continue ..]
- * _ _ _ _ __ _ _ _ _ _
- * add kotlin code ktx/gradle versions [Done]
- * UI experience
- * add build config file [Done]
- * GIT repo
- * _ _ _ _ __ _ _ _ _ _
- * Unit testing
- * back pressure
- */
 class TripsViewModel(
     private val repo: TripsRepo
 ) : BaseViewModel() {

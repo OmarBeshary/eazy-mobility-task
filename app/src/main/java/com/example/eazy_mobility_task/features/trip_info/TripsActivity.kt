@@ -117,12 +117,21 @@ class TripsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun updateScreenTripButtons() {
-        if (viewModel.getCurrentTripId() == FIRST_TRIP_ID)
-            enableDisableTripButton(b1 = false, b2 = true, b3 = false, b4 = true)
-        if (viewModel.getCurrentTripId() == LATEST_TRIP_ID)
-            enableDisableTripButton(b1 = true, b2 = false, b3 = true, b4 = false)
-        else
-            enableDisableTripButton(b1 = true, b2 = true, b3 = true, b4 = true)
+        when {
+            viewModel.getCurrentTripId() == FIRST_TRIP_ID -> enableDisableTripButton(
+                b1 = false,
+                b2 = true,
+                b3 = false,
+                b4 = true
+            )
+            viewModel.getCurrentTripId() == LATEST_TRIP_ID -> enableDisableTripButton(
+                b1 = true,
+                b2 = false,
+                b3 = true,
+                b4 = false
+            )
+            else -> enableDisableTripButton(b1 = true, b2 = true, b3 = true, b4 = true)
+        }
     }
 
     private fun enableDisableTripButton(b1: Boolean, b2: Boolean, b3: Boolean, b4: Boolean) {
