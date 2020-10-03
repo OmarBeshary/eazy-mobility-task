@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/alabaster"
-    tools:context=".features.TripsActivity">
+    tools:context=".features.trip_info.TripsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
-        tools:context=".features.TripsActivity">
+        tools:context=".features.trip_info.TripsActivity">
 
         <TextView
             android:id="@+id/pickup_tv"

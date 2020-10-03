@@ -1,4 +1,4 @@
-package com.example.eazy_mobility_task.features
+package com.example.eazy_mobility_task.features.trip_info
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -99,7 +99,7 @@ class TripsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun onRoutePointsAreReady(info: TripInfoResponse) {
-        //updateScreenTripButtons()
+        updateScreenTripButtons()
         with(info) {
             val startPoint =
                 LatLng(pickupLat, pickupLng)

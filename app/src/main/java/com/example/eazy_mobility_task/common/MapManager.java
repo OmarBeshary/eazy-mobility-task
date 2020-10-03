@@ -5,15 +5,14 @@ import com.directions.route.Route;
 import com.directions.route.RouteException;
 import com.directions.route.Routing;
 import com.directions.route.RoutingListener;
+import com.example.eazy_mobility_task.BuildConfig;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MapManager {
 
-    // TODO : remove fixed API
     public static void drawRoute(LatLng startPoint, LatLng endPoint, final RouteCallBack callBack) {
         ArrayList<LatLng> wayPoints = new ArrayList<>();
 
@@ -23,7 +22,7 @@ public class MapManager {
         Routing routing = new Routing.Builder()
                 .travelMode(AbstractRouting.TravelMode.DRIVING)
                 .waypoints(wayPoints)
-                .key("AIzaSyAwd5J2ubnYfTPnDg5bXdh_YHDia6aLFhw")
+                .key(BuildConfig.GOOGLE_MAP_API_TOKEN)
                 .withListener(new RoutingListener() {
                     @Override
                     public void onRoutingFailure(RouteException e) {

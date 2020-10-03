@@ -1,4 +1,4 @@
-package com.example.eazy_mobility_task.features
+package com.example.eazy_mobility_task.features.trip_info
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,12 +8,11 @@ import com.example.eazy_mobility_task.common.model.response.TripInfoResponse
 import com.example.eazy_mobility_task.common.repo.TripsRepo
 
 /**
- * add offline support
+ * add offline support [continue ..]
  * _ _ _ _ __ _ _ _ _ _
- * add kotlin code ktx/gradle versions [continue ..]
+ * add kotlin code ktx/gradle versions [Done]
  * UI experience
- * add rotation screen
- * add build config file
+ * add build config file [Done]
  * GIT repo
  * _ _ _ _ __ _ _ _ _ _
  * Unit testing

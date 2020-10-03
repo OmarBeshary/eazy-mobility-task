@@ -24,7 +24,11 @@ android {
 
 
     buildTypes {
+        debug {
+            buildConfigField "String", "GOOGLE_MAP_API_TOKEN", '"AIzaSyAwd5J2ubnYfTPnDg5bXdh_YHDia6aLFhw"'
+        }
         release {
+            buildConfigField "String", "GOOGLE_MAP_API_TOKEN", '"AIzaSyAwd5J2ubnYfTPnDg5bXdh_YHDia6aLFhw"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
@@ -47,15 +51,12 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
     implementation Dependencies.core
     implementation Dependencies.core_ktx
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
-    implementation "androidx.room:room-ktx:2.2.5"
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    testImplementation 'junit:junit:4.13'
-    testImplementation Dependencies.mockito
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation Dependencies.live_data_ktx
+    implementation Dependencies.room_ktx
+    implementation Dependencies.app_compat
     implementation Dependencies.constarint_layout
 
     implementation Dependencies.rx_java
@@ -81,12 +82,16 @@ dependencies {
     kapt Dependencies.room_annotation
     implementation Dependencies.room_rxjava2_support
 
-    implementation 'com.android.support:multidex:1.0.3'
-    testImplementation 'androidx.arch.core:core-testing:2.1.0'
-    testImplementation 'org.json:json:20180813'
+    testImplementation Dependencies.junit
+    testImplementation Dependencies.mockito
+    testImplementation Dependencies.arch_core
+    testImplementation Dependencies.json_test
+    androidTestImplementation Dependencies.android_junit
+    androidTestImplementation Dependencies.espresso
 
-    implementation('com.github.ihsanbal:LoggingInterceptor:3.1.0') {
+    implementation(Dependencies.logging_interceptor) {
         exclude group: 'org.json', module: 'json'
     }
+    implementation Dependencies.multidex
 
 }
