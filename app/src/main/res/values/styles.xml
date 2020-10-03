@@ -1,10 +1,28 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/ButtonStyle</item>
     </style>
+
+    <style name="LocationTextStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/abbey</item>
+        <item name="android:drawablePadding">15dp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/bleached_cedar</item>
+    </style>
+
 
 </resources>

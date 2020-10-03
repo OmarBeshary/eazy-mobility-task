@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
@@ -8,30 +9,89 @@ android {
 
     defaultConfig {
         applicationId "com.example.eazy_mobility_task"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 
     buildTypes {
+        debug {
+            buildConfigField "String", "GOOGLE_MAP_API_TOKEN", '"AIzaSyAwd5J2ubnYfTPnDg5bXdh_YHDia6aLFhw"'
+        }
         release {
+            buildConfigField "String", "GOOGLE_MAP_API_TOKEN", '"AIzaSyAwd5J2ubnYfTPnDg5bXdh_YHDia6aLFhw"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
         }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
     }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.1'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation Dependencies.core
+    implementation Dependencies.core_ktx
+    implementation Dependencies.live_data_ktx
+    implementation Dependencies.room_ktx
+    implementation Dependencies.app_compat
+    implementation Dependencies.constarint_layout
+
+    implementation Dependencies.rx_java
+    implementation Dependencies.rx_android
+
+    implementation Dependencies.google_maps
+    implementation Dependencies.google_directions
+
+    implementation Dependencies.koin_core
+    implementation Dependencies.koin_android
+    implementation Dependencies.koin_view_model
+    implementation Dependencies.koin_test
+
+    implementation Dependencies.retrofit
+    implementation Dependencies.retrofit_rxjava_adapter
+    implementation Dependencies.retrofit_moshi_converter
+
+    implementation Dependencies.moshi
+    implementation Dependencies.moshi_kotlin
+    kapt Dependencies.moshi_code_gene
+
+    implementation Dependencies.room
+    kapt Dependencies.room_annotation
+    implementation Dependencies.room_rxjava2_support
+
+    testImplementation Dependencies.junit
+    testImplementation Dependencies.mockito
+    testImplementation Dependencies.arch_core
+    testImplementation Dependencies.json_test
+    androidTestImplementation Dependencies.android_junit
+    androidTestImplementation Dependencies.espresso
+
+    implementation(Dependencies.logging_interceptor) {
+        exclude group: 'org.json', module: 'json'
+    }
+    implementation Dependencies.multidex
 
 }
