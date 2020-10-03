@@ -26,6 +26,7 @@ public class MapManager {
                 .withListener(new RoutingListener() {
                     @Override
                     public void onRoutingFailure(RouteException e) {
+                        callBack.onRoutePointsLoaded(wayPoints);
                     }
 
                     @Override

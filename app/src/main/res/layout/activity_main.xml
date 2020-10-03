@@ -52,10 +52,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:background="@drawable/trip_button_selector"
             app:layout_constraintEnd_toStartOf="@+id/prev_trip_btn"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@id/map_fragment"
-            app:layout_constraintTop_toBottomOf="@id/map_fragment" />
+            app:layout_constraintTop_toBottomOf="@id/map_fragment"
+            android:text="@string/first"/>
 
         <Button
             android:id="@+id/prev_trip_btn"
@@ -88,7 +90,8 @@
             app:layout_constraintEnd_toEndOf="@id/map_fragment"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/next_trip_btn"
-            app:layout_constraintTop_toBottomOf="@id/map_fragment" />
+            app:layout_constraintTop_toBottomOf="@id/map_fragment"
+            android:text="@string/last"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

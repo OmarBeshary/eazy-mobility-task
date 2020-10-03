@@ -21,7 +21,7 @@
 
     <style name="ButtonStyle" parent="Widget.AppCompat.Button">
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:background">@color/bleached_cedar</item>
+        <item name="android:background">@drawable/trip_button_selector</item>
     </style>
 
 

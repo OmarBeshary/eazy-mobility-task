@@ -19,7 +19,6 @@ class TripsRepo(private val infoApi: TripsApi, private val tripDao: TripDao) {
                 return@flatMap tripDao.getTripById(LATEST_TRIP_ID)
             else
                 return@flatMap saveAndGetLatestTrip()
-
         }
 
 

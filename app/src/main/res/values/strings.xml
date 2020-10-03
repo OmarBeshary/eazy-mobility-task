@@ -3,4 +3,6 @@
     <string name="map_api_key">AIzaSyAwd5J2ubnYfTPnDg5bXdh_YHDia6aLFhw</string>
     <string name="prev">PREV</string>
     <string name="next">NEXT</string>
+    <string name="first"><![CDATA[|<]]></string>
+    <string name="last"><![CDATA[>|]]></string>
 </resources>
