@@ -77,6 +77,10 @@ dependencies {
     implementation Dependencies.moshi_kotlin
     kapt Dependencies.moshi_code_gene
 
+    implementation Dependencies.room
+    kapt Dependencies.room_annotation
+    implementation Dependencies.room_rxjava2_support
+
     implementation 'com.android.support:multidex:1.0.3'
     testImplementation 'androidx.arch.core:core-testing:2.1.0'
     testImplementation 'org.json:json:20180813'

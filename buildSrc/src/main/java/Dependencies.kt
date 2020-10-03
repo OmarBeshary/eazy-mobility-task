@@ -27,6 +27,10 @@ object Dependencies {
     const val core_ktx = "androidx.core:core-ktx:${Versions.core_ktx}"
 
     const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
+
+    val room = "androidx.room:room-runtime:${Versions.room}"
+    val room_annotation = "androidx.room:room-compiler:${Versions.room}"
+    val room_rxjava2_support = "androidx.room:room-rxjava2:${Versions.room}"
 }
 
 object Versions {
@@ -40,4 +44,5 @@ object Versions {
     const val google_directions = "1.1.0"
     const val constarint_layout = "2.0.1"
     const val mockito = "3.2.4"
+    const val room ="2.2.5"
 }

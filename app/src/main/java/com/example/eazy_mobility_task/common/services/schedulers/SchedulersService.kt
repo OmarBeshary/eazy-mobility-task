@@ -1,5 +1,4 @@
-package com.example.eazy_mobility_task.common.services
-
+package com.example.eazy_mobility_task.common.services.schedulers
 import io.reactivex.Scheduler
 
 /**

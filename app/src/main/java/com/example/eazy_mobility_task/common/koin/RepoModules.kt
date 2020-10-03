@@ -4,5 +4,5 @@ import com.example.eazy_mobility_task.common.repo.TripsRepo
 import org.koin.dsl.module
 
 val repoModules = module {
-    factory { TripsRepo(infoApi = get()) }
+    factory { TripsRepo(infoApi = get(),tripDao = get()) }
 }

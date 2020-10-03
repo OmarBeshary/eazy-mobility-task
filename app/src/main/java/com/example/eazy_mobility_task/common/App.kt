@@ -22,6 +22,6 @@ class App : Application() {
     private fun getKoinModules(): List<Module> = listOf(
         viewModelModules, restClientModule,
         restAPIsModules, repoModules,
-        schedulerModule
+        schedulerModule, databaseModules
     )
 }

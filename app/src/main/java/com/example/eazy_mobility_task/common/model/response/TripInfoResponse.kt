@@ -1,10 +1,14 @@
 package com.example.eazy_mobility_task.common.model.response
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
+@Entity(tableName = "trips")
 @JsonClass(generateAdapter = true)
 class TripInfoResponse(
+    @PrimaryKey
     @field:Json(name = "id")
     val id: Long,
     @field:Json(name = "pickup_station")

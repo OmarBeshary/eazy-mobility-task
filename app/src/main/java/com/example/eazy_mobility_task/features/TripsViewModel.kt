@@ -1,6 +1,5 @@
 package com.example.eazy_mobility_task.features
 
-import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.eazy_mobility_task.common.component.states.IViewState
@@ -9,21 +8,16 @@ import com.example.eazy_mobility_task.common.model.response.TripInfoResponse
 import com.example.eazy_mobility_task.common.repo.TripsRepo
 
 /**
- * TODO :
- * integrate with backend
- * UI experience
- * add unit testing
  * add offline support
- * add error code
- * add build config file
-_ _ _ _ _ _ _ _ _ _ _
- * remove fixed thread call
- * add disposal
- * show route
- * add IViewState
- * add base viewModel
- * UI enhancement
+ * _ _ _ _ __ _ _ _ _ _
  * add kotlin code ktx/gradle versions [continue ..]
+ * UI experience
+ * add rotation screen
+ * add build config file
+ * GIT repo
+ * _ _ _ _ __ _ _ _ _ _
+ * Unit testing
+ * back pressure
  */
 class TripsViewModel(
     private val repo: TripsRepo
@@ -37,21 +31,7 @@ class TripsViewModel(
         MutableLiveData<IViewState<TripInfoResponse>>()
     }
 
-    private fun get1stTrip() {
-
-    }
-
-    private fun getPreviousTrip() {
-
-    }
-
-    private fun getNextTrip() {
-
-    }
-
-    private fun getLastTrip() {
-
-    }
+    private var currentTripId: Long = -1
 
     fun getLatestTrip() {
         repo
@@ -59,14 +39,23 @@ class TripsViewModel(
             .execute(latestTripStates)
     }
 
-    private fun getTripInfo(id: Long) {
+    fun getTripInfo(id: Long) {
+        updateCurrentTripId(id)
         repo
             .getTripInfo(id)
             .execute(tripInfoStates)
     }
 
+    fun updateCurrentTripId(id: Long) {
+        currentTripId = id
+    }
+
+    fun getCurrentTripId() = currentTripId
+
     fun observeLatestTripInfoStates(): LiveData<IViewState<TripInfoResponse>> =
         latestTripStates
 
+    fun observeTripInfoStates(): LiveData<IViewState<TripInfoResponse>> =
+        tripInfoStates
 
 }

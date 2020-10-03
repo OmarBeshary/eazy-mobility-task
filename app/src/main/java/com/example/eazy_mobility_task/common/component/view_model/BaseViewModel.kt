@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.eazy_mobility_task.common.component.states.IViewState
 import com.example.eazy_mobility_task.common.component.states.Result
-import com.example.eazy_mobility_task.common.services.SchedulersService
+import com.example.eazy_mobility_task.common.services.schedulers.SchedulersService
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import org.koin.core.KoinComponent
