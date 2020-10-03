@@ -2,11 +2,11 @@
 
 <h2>Features</h2> 
 
-- Showing trips info pickup and destination on google Map.
+- Show trips info, pickup and destination on Google Map.
 
-- Navigating between trips.
+- Navigate between trips.
 
-- Show trips info in offline mode.
+- Load trips info in offline mode.
 
 
 
